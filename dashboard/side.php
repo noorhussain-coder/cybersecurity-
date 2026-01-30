@@ -34,13 +34,11 @@
                     </div>
                     <div class="w-10 h-10 rounded-full   p-[2px]">
                  
-                          <?php if (!empty($profile_image) && file_exists(__DIR__ . '/uploads' . $profile_image)): ?>
-                                <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="avatar" class="w-10 h-10 rounded-full object-cover border-2 border-cyan-500">
-                            <?php else: ?>
-                                <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center border-2 border-cyan-500 text-gray-300">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            <?php endif; ?>
+                          <?php if (!empty($user['profile_image']) && file_exists('../' . $user['profile_image'])): ?>
+                        <img src="../<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile" class="w-full h-full object-cover">
+                    <?php else: ?>
+                        <i class="fas fa-user text-4xl text-gray-600"></i>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
